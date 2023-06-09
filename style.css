@@ -23,7 +23,7 @@
 }
 
 .light{
-  --text-color: black;
+  --text-color: rgb(0, 0, 0);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --stroke-color-hover: black;
   --stroke-color-svg: rgba(0, 0, 0, 0.5);
@@ -56,15 +56,15 @@ header{
 header img{
   display: flex;
 }
-/* @ do usuario */
+/* @ do usuário */
 header p{
+  color: var(--text-color);
+
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 24px;
 
   padding-top: 0.8rem;
-
-  color: var(--text-color);
 }
 
 #switchContainer{
@@ -108,9 +108,22 @@ header p{
 }
 
 /* container de links */
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 main #linksContainer{
   display: flex;
   flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  max-width: 588px;
   
   gap: 1.6rem;
   padding: 24px;
@@ -121,6 +134,7 @@ main div a{
   text-decoration: none;
   text-align: center;
 
+  width: 100%;
   padding: 1.6rem;
 
   color: var(--text-color);
