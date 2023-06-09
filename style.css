@@ -1,0 +1,192 @@
+*{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.dark{
+  --text-color: white;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --stroke-color-hover: white;
+  --stroke-color-svg: rgba(255, 255, 255, 0.5);
+  --background-color: rgba(255, 255, 255, 0.1);
+  --background-color-svg: rgba(255, 254, 254, 0.138);
+  --background-color-hover: rgba(255, 255, 255, 0.05);
+  --background-icons-color-hover: rgba(255, 255, 255, 0.2);
+  --background-image: url(assets/bg/Background.jpg);
+  --filter-icon: drop-shadow( 2px 2px 3px rgba(222, 126, 251, 0.467)
+  );
+  --switchContainer-url: url(assets/svg/MoonStars.svg)
+
+
+}
+
+.light{
+  --text-color: black;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --stroke-color-hover: black;
+  --stroke-color-svg: rgba(0, 0, 0, 0.5);
+  --background-color: rgba(0, 0, 0, 0.05);
+  --background-color-hover: rgba(0, 0, 0, 0.02);
+  --background-icons-color-hover:rgba(0, 0, 0, 0.1);
+  --background-color-svg: rgba(0, 0, 0, 0.05);
+  --background-image:url(assets/bg/bg-mobile-light.jpg);
+  --filter-icon:drop-shadow( 2px 2px 3px rgb(224, 140, 250)
+  );
+  --switchContainer-url: url(assets/svg/Sun.svg);
+  
+}
+
+body{ 
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem;
+}
+/* foto de perfil */
+header img{
+  display: flex;
+}
+/* @ do usuario */
+header p{
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+
+  padding-top: 0.8rem;
+
+  color: var(--text-color);
+}
+
+#switchContainer{
+  position: relative;
+  
+  padding-top: 24px;
+}
+
+#switchContainer button{
+  position: absolute;
+  top: 80%; 
+  right: 1;
+  z-index: 1;
+  transform: translateY(-60%);
+
+  height: 32px;
+  width: 32px;
+
+  border: 0;
+
+  background: rgb(255, 255, 255) var(--switchContainer-url) no-repeat  center;
+
+  border-radius: 50%
+}#switchContainer button:hover{
+  cursor: pointer;
+}
+
+#switchContainer span{
+  display: block;
+
+  width: 64px;
+  height: 24px;
+
+  background: var(--background-color-svg);
+  border: 1px solid var(--stroke-color-svg);
+  border-radius: 9999px;
+}
+
+.light #switchContainer button{
+  right: 0;
+}
+
+/* container de links */
+main #linksContainer{
+  display: flex;
+  flex-direction: column;
+  
+  gap: 1.6rem;
+  padding: 24px;
+}
+/* links */
+main div a{
+  font-family: 'inter', sans-serif;
+  text-decoration: none;
+  text-align: center;
+
+  padding: 1.6rem;
+
+  color: var(--text-color);
+  background: var(--background-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  transition: background, border 0.4s;
+
+}main div a:hover{
+  border: 1.5px solid var(--stroke-color-hover);
+  background:var(--background-color-hover);
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+/* redes sociais */
+footer #socialMediasContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+}
+
+footer #socialMediasContainer a{
+  padding: 1.2rem;
+
+  text-decoration: none;
+  text-align: center;
+
+  border-radius: 50%;
+  
+}footer #socialMediasContainer a:hover{
+  background: var(--background-icons-color-hover);
+  padding: 1.3rem;
+
+  filter: var(--filter-icon);
+
+  transition: all 0.2s;
+  -moz-transition: all 0.2;
+  -o-transition: all 0.2;
+  -webkit-transition: all 0.2;
+}
+/* cor dos links */
+footer a, p{
+  color: var(--text-color); 
+  
+}
+/* criador do site */
+footer p {
+  margin: 3.2rem;
+  
+  font-size: 14px;
+ 
+}footer p a:hover {
+ text-decoration: none;
+
+}
