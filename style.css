@@ -97,6 +97,8 @@ header p{
   border-radius: 50%
 }#switchContainer button:hover{
   cursor: pointer;
+
+  outline: 8px solid var(--background-color);
 }
 
 /*animações no button*/
