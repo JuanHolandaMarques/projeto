@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/*modo escuro*/
 .dark{
   --text-color: white;
   --stroke-color: rgba(255, 255, 255, 0.5);
@@ -22,6 +23,7 @@
 
 }
 
+/*modo claro*/
 .light{
   --text-color: rgb(0, 0, 0);
   --stroke-color: rgba(0, 0, 0, 0.5);
@@ -43,6 +45,8 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 
+  height: 100vh;
+
 }
 
 header{
@@ -52,10 +56,12 @@ header{
 
   padding: 2rem;
 }
+
 /* foto de perfil */
 header img{
   display: flex;
 }
+
 /* @ do usuário */
 header p{
   color: var(--text-color);
@@ -67,6 +73,7 @@ header p{
   padding-top: 0.8rem;
 }
 
+/*button*/
 #switchContainer{
   position: relative;
   
@@ -76,7 +83,7 @@ header p{
 #switchContainer button{
   position: absolute;
   top: 80%; 
-  right: 1;
+  left: 0;
   z-index: 1;
   transform: translateY(-60%);
 
@@ -92,6 +99,16 @@ header p{
   cursor: pointer;
 }
 
+/*animações no button*/
+.light #switchContainer button{
+  animation: slideIn 0.3s forwards;
+}
+
+.dark #switchContainer button{
+  animation: slideOf 0.3s forwards;
+}
+
+/*track do button*/
 #switchContainer span{
   display: block;
 
@@ -101,10 +118,6 @@ header p{
   background: var(--background-color-svg);
   border: 1px solid var(--stroke-color-svg);
   border-radius: 9999px;
-}
-
-.light #switchContainer button{
-  right: 0;
 }
 
 /* container de links */
@@ -118,7 +131,6 @@ main{
 main #linksContainer{
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   
@@ -128,6 +140,7 @@ main #linksContainer{
   gap: 1.6rem;
   padding: 24px;
 }
+
 /* links */
 main div a{
   font-family: 'inter', sans-serif;
@@ -161,6 +174,7 @@ footer{
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
+
 /* redes sociais */
 footer #socialMediasContainer{
   display: flex;
@@ -189,11 +203,13 @@ footer #socialMediasContainer a{
   -o-transition: all 0.2;
   -webkit-transition: all 0.2;
 }
+
 /* cor dos links */
 footer a, p{
   color: var(--text-color); 
   
 }
+
 /* criador do site */
 footer p {
   margin: 3.2rem;
@@ -203,4 +219,25 @@ footer p {
 }footer p a:hover {
  text-decoration: none;
 
+}
+
+/*Animações*/
+@keyframes slideIn{
+  from{
+    left: 0;
+  }
+
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slideOf{
+  from{
+    left: 50%;
+  }
+
+  to{
+    left: 0;
+  }
 }
